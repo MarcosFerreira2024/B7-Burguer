@@ -554,24 +554,19 @@ video {
   display: none;
 }
 
-.mt-2 {
-  margin-top: 0.5rem;
+.text-\[72px\] {
+  font-size: 72px;
 }
 
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+.inter{
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
-.font-bold {
-  font-weight: 700;
+.calistoga{
+  font-family: "Calistoga", serif;
+  font-weight: 400;
+  font-style: normal;
 }
-
-.text-gray-600 {
-  --tw-text-opacity: 1;
-  color: rgb(75 85 99 / var(--tw-text-opacity));
-}
-
-.underline {
-  text-decoration-line: underline;
-}
+    
