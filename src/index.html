@@ -29,22 +29,47 @@
     </nav>
   </header>
   <main class="max-w-[1216px] mx-auto mt-10">
-    <div class="grid xl:grid-cols-2   items-center justify-center xl:justify-normal  ">
+    <div class="grid lg:grid-cols-2   items-center justify-center lg:justify-normal  ">
       <div class=" text-white">
         <h1 class="text-7xl calistoga max-w-[592px] ">O Hamburguer
           mais delicioso.😋  </h1>
         <p class="text-lg inter mt-5  max-w-[454px]" >A primeira hamburgueria virtual que você faz o pedido online e come o burger através do computador.</p>
-        <div class="grid justify-start  mt-20">
+        <div class="grid lg:justify-start justify-center  mt-20 mb-5 lg:mb-0">
           <a href="" class="text-lg inter bg-[#FE6A0F] px-[80px] py-6  font-semibold rounded-md ">Fazer pedido</a>
         </div>
       </div>
-      <div class=" grid xl:justify-end justify-center ">
+      <div class=" grid lg:justify-end justify-center ">
           <div>
             <img src="imgs/heroBurger.png" alt="" class="w-[100%] h-[100%] object-cover ">
           </div>
       </div>
     </div>
   </main>
+  <section class="bg-[#1F1F1F] mt-[-80px] min-h-[372px] ">
+    <div class="max-w-[1216px] mx-auto grid justify-center lg:justify-normal pt-[80px]">
+      <h1 class="text-3xl inter font-medium  text-white max-w-[330px] mb-[50px]">
+        Pesquise o seu Hamburguer favorito!
+      </h1>
+      <div class="lg:grid-cols-2 lg:gap-0 gap-5 grid">
+        <div>
+          <form class=" lg:w-[490px] w-[360px] h-[80px] bg-[#2B2B2B] flex items-center rounded-md">
+            <label for="buscarBurger" class=" p-5"><img src="imgs/searchIcon.png" alt=""></label>
+            <input  type="search" name="buscarBurger" id="buscarBurger" placeholder="Digite o nome do Burger" class="w-[100%] h-[100%] bg-transparent text-2xl outline-none inter text-[#979797] placeholder:text-[#979797]">
+
+          </form>
+        </div>
+        <div class="grid justify-end pb-20 lg:pb-0">
+          <select class=" lg:w-[490px] w-[360px] h-[80px] bg-[#2B2B2B] flex items-center text-2xl outline-none inter text-[#979797] pl-[28px] rounded-md">
+            <option class="" value="" disabled selected>Selecione uma opção</option>
+            <option class="" value="burger1">Burger Flash</option>
+            <option class="" value="burger2">Burger Thor</option>
+            <option class="" value="burger3">Burger Hulk</option>
+            <option class="" value="burger4">Burger Batman</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </section>
   
 </body>
 </html>
