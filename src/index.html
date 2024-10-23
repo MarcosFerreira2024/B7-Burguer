@@ -9,30 +9,45 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
-<body class="bg-[#141414]">
-  <header class="max-w-[1216px] mx-auto ">
-    <nav class="flex items-center justify-between h-[153px]">
+<body class="bg-[#141414]  ">
+  <header class=" z-10 fixed left-0 bg-[#141414] right-0 top-0 ">
+    <nav class="flex items-center justify-between  h-[140px] max-w-[1216px] mx-auto">
       <div class="flex gap-[105px]">
         <div>
           <img src="imgs/logo-b7-burger.svg" alt="">
-          
         </div>
-        <ul class="inter flex text-base items-center text-white gap-[64px]">
-          <li><a href="">Início</a></li>
-          <li><a href="">Burger</a></li>
-          <li><a href="">Contato</a></li>
+        <ul class="inter lg:flex text-base items-center text-white gap-[64px] hidden ">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#burger">Burger</a></li>
+          <li><a href="#contato">Contato</a></li>
         </ul>
+      
+        
       </div>
+      
       <div>
         <a href="" class="inter text-base font-semibold text-white border-[1px] px-[80px] py-6 rounded-md 
-           bg-transparent transition-colors duration-300 ease-in-out 
-           hover:bg-white hover:text-black">
+           bg-transparent transition-colors duration-300 ease-in-out lg:flex text-nowrap
+           hover:bg-white hover:text-black hidden ">
             Fazer Pedido
         </a>
-    </div>
+        <nav class="lg:hidden relative ">
+            <div class="menuMobile cursor-pointer">
+                <img src="imgs/menu-hamburguer.svg" alt="Menu">
+            </div>
+            <ul class="calistoga flex-col right-0  pr-10 pt-20 mt-10 items-center h-[100vh] w-[100vw] text-5xl
+                text-white absolute bg-[rgba(20,20,20,0.8)] gap-10 hidden transform translate-x-full 
+                transition-transform duration-500 ease-in-out menuItems  ">
+                <li class="fechar cursor-pointer "><img src="imgs/x.svg" alt=""></li>
+                <li class="hover:text-[#FE6A0F]" ><a href="#inicio">Início</a></li>
+                <li class="hover:text-[#FE6A0F]"><a href="#burger">Burger</a></li>
+                <li class="hover:text-[#FE6A0F]"><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+      </div>
     </nav>
   </header>
-  <main class="max-w-[1216px] mx-auto mt-10">
+  <main class="max-w-[1216px] mx-auto mt-40">
     <div class="grid lg:grid-cols-2   items-center justify-center lg:justify-normal  ">
       <div class=" text-white">
         <h1 class="text-7xl calistoga max-w-[592px] ">O Hamburguer
@@ -49,7 +64,7 @@
       </div>
     </div>
   </main>
-  <section class="bg-[#1F1F1F] mt-[-80px] min-h-[372px] ">
+  <section class="bg-[#1F1F1F] mt-[-80px]  min-h-[372px] ">
     <div class="max-w-[1216px] mx-auto grid justify-center lg:justify-normal pt-[80px]">
       <h1 class="text-3xl inter font-medium  text-white max-w-[330px] mb-[50px]">
         Pesquise o seu Hamburguer favorito!
@@ -74,7 +89,7 @@
       </div>
     </div>
   </section>
-  <section class="max-w-[1216px] mx-auto pt-[80px]">
+  <section class="max-w-[1216px] mx-auto pt-[80px] " id="burger">
     <div class="flex flex-wrap max-w-[1216px] gap-[32px] justify-center">
       <div class="w-[384px] h-[416px] bg-[#2B2B2B] flex flex-col relative justify-center items-center rounded-md">
         <div class="h-[50%]">
@@ -150,7 +165,7 @@
       </div>
     </div>
   </section>
-  <footer class="bg-[#1F1F1F] mt-[80px] ">
+  <footer class="bg-[#1F1F1F] mt-[80px] " id="contato">
     <div class="max-w-[1216px] mx-auto flex flex-wrap justify-center md:gap-0 md:justify-between items-center h-[200px]">
       <div>
         <img src="imgs/logo-b7-burger.svg" alt="">
@@ -163,4 +178,29 @@
   </footer>
   
 </body>
+<script>
+ function Menu() {
+  const menuMobile = document.querySelector('.menuMobile');
+  const menuItems = document.querySelector('.menuItems');
+  const fechar = document.querySelector('.fechar');
+  function toggleMenu() {
+    if (menuItems.classList.contains('hidden')) {
+      menuItems.classList.remove('hidden');
+      setTimeout(() => {
+        menuItems.classList.remove('translate-x-full'); 
+        menuItems.classList.add('flex');
+      }, 0);
+    } else {
+      menuItems.classList.add('translate-x-full');
+      setTimeout(() => {
+        menuItems.classList.remove('flex');
+        menuItems.classList.add('hidden'); 
+      }, 500); 
+    }
+  }
+  menuMobile.addEventListener('click', toggleMenu);
+  fechar.addEventListener('click', toggleMenu);
+}
+Menu();
+</script>
 </html>
